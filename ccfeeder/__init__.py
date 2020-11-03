@@ -7,7 +7,6 @@ import logging
 
 import pydantic
 import fiona
-import fire
 import topojson
 import requests
 
@@ -17,7 +16,7 @@ class Config(pydantic.BaseModel):
     password: str
     keep: List[str] = ["CNTRY_NAME","GWCODE","ISOAL2"]
 
-def main(shapefile="shapes/cshapes.shp",year = None,alpha = .01,beta = .1,conf="config.json",debug=True):
+def uploadshapefiles(shapefile="shapes/cshapes.shp",year = None,alpha = .01,beta = .1,conf="config.json",debug=True):
     with open(conf) as f:
         config = Config(**json.load(f))
 
@@ -75,6 +74,3 @@ def main(shapefile="shapes/cshapes.shp",year = None,alpha = .01,beta = .1,conf="
         r = client.post(url, json=topologies, headers=headers)
         print(r.content)
     logging.info("Done!")
-
-if __name__ == "__main__":
-    fire.Fire(main)

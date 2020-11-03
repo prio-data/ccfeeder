@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+import fire
+from ccfeeder import uploadshapefiles 
+
+if __name__ == "__main__":
+   fire.Fire(uploadshapefiles)
