@@ -1,0 +1,8 @@
+shapes/*
+!shapes/.keep
+cache/*
+!cache/.keep
+*.py[cod]
+__pycache__
+venv/
+config.json

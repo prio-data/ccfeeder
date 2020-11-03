@@ -1,0 +1,5 @@
+pydantic==1.7.2
+Fiona==1.8.17
+fire==0.3.1
+topojson==1.0rc11
+requests==2.24.0
